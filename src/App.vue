@@ -1,17 +1,11 @@
 <template>
-  <header>
-    <div class="wrapper">
-      <NavBar />
-    </div>
-  </header>
+  <NavBar />
 
-  <!-- <RouterView /> -->
+  <RouterView />
 </template>
 
 <script setup lang="ts">
-import NavBar from './components/NavBar/NavBar.vue'
+import NavBar from './components/molecules/NavBar/NavBar.vue'
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
