@@ -1,22 +1,43 @@
+@import '@/styles/colors'
+
 .NavBar
   width: 100%
   display: flex
   flex-direction: row
   justify-content: center
   &__content
-    width: 700px
+    width: 710px
+    height: 32px
     display: grid
     grid-template-columns: repeat(5, 1fr)
   &__list
+    z-index: 2
     position: absolute
-    width: 135px
+    top: 33px
+    width: 145px
     padding: 6px 10px
-    background-color: rgba(128, 128, 128, 0.8)
+    background-color: $color__green
+    border-top: 1px solid transparent
+    cursor: url('target.png'), pointer
   &__list-title
-    width: 135px
+    width: 145px
     font-size: 20px
+    border-bottom: 1px solid transparent
+    a
+      padding-left: 5px
     &:hover
-      background-color: red
+      border-bottom: 1px solid $color__vanilla
+  &__list-title--dark
+    cursor: url('target_white.png'), pointer
   &__list-item
     text-align: left
     font-size: 15px
+    &:hover
+      cursor: url('target.png'), pointer
+      a
+        color: $color__vanilla
+        cursor: url('target.png'), pointer
+  &__logo-container
+    width: 50px
+  &__logo
+    height: 32px

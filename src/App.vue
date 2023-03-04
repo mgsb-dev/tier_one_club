@@ -1,6 +1,7 @@
 <template>
+  <div class="spacer"></div>
   <NavBar />
-
+  <div class="spacer"></div>
   <RouterView />
 </template>
 
@@ -8,4 +9,7 @@
 import NavBar from './components/molecules/NavBar/NavBar.vue'
 </script>
 
-<style scoped></style>
+<style lang="sass" scoped>
+.spacer
+  height: 3rem
+</style>
