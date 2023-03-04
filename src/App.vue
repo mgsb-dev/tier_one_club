@@ -1,17 +1,15 @@
 <template>
-  <header>
-    <div class="wrapper">
-      <NavBar />
-    </div>
-  </header>
-
-  <!-- <RouterView /> -->
+  <div class="spacer"></div>
+  <NavBar />
+  <div class="spacer"></div>
+  <RouterView />
 </template>
 
 <script setup lang="ts">
-import NavBar from './components/NavBar/NavBar.vue'
+import NavBar from './components/molecules/NavBar/NavBar.vue'
 </script>
 
-<style scoped>
-
+<style lang="sass" scoped>
+.spacer
+  height: 3rem
 </style>
