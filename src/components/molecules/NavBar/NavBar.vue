@@ -1,33 +1,57 @@
 <template>
   <header>
     <nav class="NavBar" id="bs-navbar" aria-expanded="false">
-      <div class="NavBar__logo-container">
-        <img :src="TierOneClubIcon" class="NavBar__logo" />
-      </div>
+      <RouterLink to="/"><h1>TIER ONE CLUB</h1></RouterLink>
+
       <ul class="NavBar__content">
-        <li class="NavBar__list-title text__align--center">
-          <RouterLink to="/" class="NavBar__list-title--dark">Home</RouterLink>
-        </li>
-        <li class="NavBar__list-title">
+        <li
+          id="training"
+          class="NavBar__list-title"
+          @mouseenter.prevent="showTraining"
+          @click.prevent="clickHandler"
+        >
           <RouterLink to="/training" class="NavBar__list-title--dark">Formación</RouterLink>
-          <ul class="NavBar__list">
+          <ul class="NavBar__list" v-if="isTrainingsShow" @mouseleave.prevent="hideTraining">
             <li class="NavBar__list-item" v-for="training in trainings" :key="training.id">
               <RouterLink :to="training.id">{{ training.name }}</RouterLink>
             </li>
           </ul>
         </li>
-        <li class="NavBar__list-title">
+        <li
+          id="programs"
+          class="NavBar__list-title"
+          @mouseenter.prevent="showPrograms"
+          @click.prevent="clickHandler"
+        >
           <RouterLink to="/programs" class="NavBar__list-title--dark">Programación</RouterLink>
-          <ul class="NavBar__list">
+          <ul class="NavBar__list" v-if="isProgramsShow" @mouseleave.prevent="hidePrograms">
             <li class="NavBar__list-item" v-for="program in programs" :key="program.id">
               <RouterLink :to="program.id">{{ program.name }}</RouterLink>
             </li>
           </ul>
         </li>
-        <li class="NavBar__list-title text__align--center">
+        <li
+          id="gallery"
+          class="NavBar__list-title"
+          @click.prevent="clickHandler"
+          @mouseenter.prevent="hideTabs"
+        >
           <RouterLink to="/gallery" class="NavBar__list-title--dark">Galería</RouterLink>
         </li>
-        <li class="NavBar__list-title">
+        <li
+          id="shop"
+          class="NavBar__list-title"
+          @click.prevent="clickHandler"
+          @mouseenter.prevent="hideTabs"
+        >
+          <RouterLink to="#" class="NavBar__list-title--dark">Tienda</RouterLink>
+        </li>
+        <li
+          id="aboutUs"
+          class="NavBar__list-title"
+          @click.prevent="clickHandler"
+          @mouseenter.prevent="hideTabs"
+        >
           <RouterLink to="/about-us" class="NavBar__list-title--dark">Sobre nosotros</RouterLink>
         </li>
       </ul>
@@ -36,9 +60,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import TierOneClubIcon from '@/assets/rubik.png'
+import TierOneClubIcon from '@/assets/eslint.svg'
 
 export default defineComponent({
   components: { RouterLink },
@@ -52,10 +76,65 @@ export default defineComponent({
       { name: 'Opción 2', id: '/programs' }
     ]
 
+    const isTrainingsShow = ref(false)
+    const isProgramsShow = ref(false)
+    const lastActiveTab = ref<string | null>(null)
+
+    const showTraining = (): void => {
+      isProgramsShow.value = false
+      isTrainingsShow.value = true
+    }
+
+    const hideTraining = (): void => {
+      isTrainingsShow.value = false
+    }
+
+    const showPrograms = (): void => {
+      isTrainingsShow.value = false
+      isProgramsShow.value = true
+    }
+
+    const hidePrograms = (): void => {
+      isProgramsShow.value = false
+    }
+
+    const hideTabs = (): void => {
+      isProgramsShow.value = false
+      isTrainingsShow.value = false
+    }
+
+    const clickHandler = (e: Event): void => {
+      const eventTarget = e.currentTarget as HTMLSelectElement
+      const id = eventTarget.getAttribute('id')
+      hideTabs()
+
+      if (!lastActiveTab.value) {
+        lastActiveTab.value = id
+        eventTarget.classList.add('active')
+        return
+      }
+
+      const previousElement = document.getElementById(lastActiveTab.value)
+      if (previousElement) {
+        lastActiveTab.value = id
+        previousElement.classList.remove('active')
+        eventTarget.classList.add('active')
+      }
+    }
+
     return {
       TierOneClubIcon,
       trainings,
-      programs
+      programs,
+      isTrainingsShow,
+      isProgramsShow,
+
+      showTraining,
+      hideTraining,
+      showPrograms,
+      hidePrograms,
+      clickHandler,
+      hideTabs
     }
   }
 })

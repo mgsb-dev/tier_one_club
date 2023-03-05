@@ -3,10 +3,12 @@
 .NavBar
   width: 100%
   display: flex
-  flex-direction: row
+  flex-direction: column
   justify-content: center
+  align-items: center
+  background-color: $color__transparency
   &__content
-    width: 710px
+    width: 725px
     height: 32px
     display: grid
     grid-template-columns: repeat(5, 1fr)
@@ -25,8 +27,8 @@
     border-bottom: 1px solid transparent
     a
       padding-left: 5px
-    &:hover
-      border-bottom: 1px solid $color__vanilla
+    &:hover, &.active
+      border-bottom: 1px solid $color__sand
   &__list-title--dark
     cursor: url('target_white.png'), pointer
   &__list-item
@@ -35,7 +37,7 @@
     &:hover
       cursor: url('target.png'), pointer
       a
-        color: $color__vanilla
+        color: $color__sand
         cursor: url('target.png'), pointer
   &__logo-container
     width: 50px

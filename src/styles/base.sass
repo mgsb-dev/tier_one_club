@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,400;1,600&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@1,900&family=Kanit:wght@200;400;700&display=swap')
 @import '@/styles/colors'
 
 $font__default: "Kanit", sans-serif
+$font__title: "Genos", sans-serif
 
 *
   margin: 0
@@ -10,10 +11,12 @@ $font__default: "Kanit", sans-serif
   font-family: $font__default
   border-style: none
 
-body
-  background-color: $color__background--dark
+html
   cursor: url('target_white.png'), pointer
 
+body
+  background: transparent
+  filter: sepia(60%)
 
 a
   text-decoration: none
@@ -21,3 +24,12 @@ a
 
 li
   list-style: none
+
+h1
+  color: $color__sand
+  font-size: 4rem
+  font-family: $font__title
+  cursor: url('target_white.png'), pointer
+
+header 
+  padding: 0 4rem
