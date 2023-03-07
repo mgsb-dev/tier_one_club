@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,400;1,600&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Orbitron:wght@900&family=Sintony&display=swap')
+
 @import '@/styles/colors'
 
-$font__default: "Kanit", sans-serif
+$font__default: 'Sintony', sans-serif
+$font__title: 'Bai Jamjuree', sans-serif
+$font__h1: 'Orbitron', sans-serif
 
 *
   margin: 0
@@ -9,11 +12,10 @@ $font__default: "Kanit", sans-serif
   box-sizing: border-box
   font-family: $font__default
   border-style: none
-
-body
-  background-color: $color__background--dark
   cursor: url('target_white.png'), pointer
 
+body
+  background: transparent
 
 a
   text-decoration: none
@@ -21,3 +23,10 @@ a
 
 li
   list-style: none
+
+h1
+  color: $color__sand
+  font-size: 14rem
+  font-family: $font__h1
+  cursor: url('target_white.png'), pointer
+

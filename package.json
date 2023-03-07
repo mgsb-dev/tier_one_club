@@ -12,6 +12,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/vue-feather-icons": "^5.0.4",
+    "@zhuowenli/vue-feather-icons": "^5.0.2",
     "normalize.css": "^8.0.1",
     "sass": "^1.58.3",
     "vue": "^3.2.47",
