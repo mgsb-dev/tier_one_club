@@ -1,16 +1,33 @@
 <template>
   <header>
-    <nav class="NavBar" id="bs-navbar" aria-expanded="false">
-      <RouterLink to="/"><h1>TIER ONE CLUB</h1></RouterLink>
-
+    <nav class="NavBar" aria-expanded="false">
+      <ul class="NavBar__rrss-container">
+        <li class="NavBar__rrss-item">
+          <span class="NavBar__rrss-title">FOLLOW US</span>
+        </li>
+        <li class="NavBar__rrss-item">
+          <InstagramIcon height="20px" width="20px" color="white" stroke-width="2px" />
+        </li>
+        <li class="NavBar__rrss-item">
+          <FacebookIcon height="20px" width="20px" color="white" stroke-width="2px" />
+        </li>
+      </ul>
       <ul class="NavBar__content">
+        <li
+          id="home"
+          class="NavBar__list-title"
+          @click.prevent="clickHandler"
+          @mouseenter.prevent="hideTabs"
+        >
+          <RouterLink to="/" class="NavBar__list-title--dark">Home</RouterLink>
+        </li>
         <li
           id="training"
           class="NavBar__list-title"
           @mouseenter.prevent="showTraining"
           @click.prevent="clickHandler"
         >
-          <RouterLink to="/training" class="NavBar__list-title--dark">Formación</RouterLink>
+          <RouterLink to="/training" class="NavBar__list-title--dark">FORMACIÓN</RouterLink>
           <ul class="NavBar__list" v-if="isTrainingsShow" @mouseleave.prevent="hideTraining">
             <li class="NavBar__list-item" v-for="training in trainings" :key="training.id">
               <RouterLink :to="training.id">{{ training.name }}</RouterLink>
@@ -52,7 +69,7 @@
           @click.prevent="clickHandler"
           @mouseenter.prevent="hideTabs"
         >
-          <RouterLink to="/about-us" class="NavBar__list-title--dark">Sobre nosotros</RouterLink>
+          <RouterLink to="/about-us" class="NavBar__list-title--dark">Conócenos</RouterLink>
         </li>
       </ul>
     </nav>
@@ -63,9 +80,10 @@
 import { defineComponent, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import TierOneClubIcon from '@/assets/eslint.svg'
+import { InstagramIcon, FacebookIcon } from '@zhuowenli/vue-feather-icons'
 
 export default defineComponent({
-  components: { RouterLink },
+  components: { RouterLink, InstagramIcon, FacebookIcon },
   setup() {
     const trainings = [
       { name: 'Opción 1', id: '/training' },

@@ -1,8 +1,7 @@
 <template>
   <div class="App__background"></div>
-  <div class="spacer"></div>
   <NavBar />
-  <div class="spacer"></div>
+  
   <RouterView />
 </template>
 
@@ -11,9 +10,6 @@ import NavBar from './components/molecules/NavBar/NavBar.vue'
 </script>
 
 <style lang="sass" scoped>
-.spacer
-  height: 3rem
-
 .App__background
   position: absolute
   width: 100vw
@@ -24,5 +20,4 @@ import NavBar from './components/molecules/NavBar/NavBar.vue'
   -o-background-size: cover
   background-size: cover
   z-index: -1
-  isolation: isolate
 </style>
