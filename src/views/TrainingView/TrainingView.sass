@@ -1,0 +1,29 @@
+@import '@/styles/colors'
+
+.Training
+  height: 100vh
+  background-color: $color__black--transparency
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  &__spacer
+    height: 6rem
+  &__container
+    width: 90%
+    height: 90%
+    background-color: $color__white--transparency
+    position: relative
+    color: $color__white
+    cursor: pointer
+    padding: 0.35rem 1rem
+    border: 0.2rem solid $color__white
+    border-radius: 0.45rem
+    perspective: 2rem
+    font-family: "Raleway", sans-serif
+    font-size: 2rem
+    font-weight: 900
+    box-shadow: inset 0px 0px 0.5rem 0px $color__white, 0px 0px 0.5rem 0px $color__white
+    animation: border-flicker 2s linear infinite
+  &__title
+    color: $color__gray-dark
