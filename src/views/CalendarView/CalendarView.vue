@@ -1,7 +1,7 @@
 <template>
-  <div class="Training">
+  <div class="Calendar">
     <ViewPanel>
-      <h2 class="Training__title">This is Training page</h2>
+      <h2 class="Calendar__title">This is Calendar page</h2>
     </ViewPanel>
   </div>
 </template>
@@ -18,5 +18,5 @@ export default defineComponent({
 </script>
 
 <style lang="sass">
-@import './TrainingView.sass'
+@import './CalendarView.sass'
 </style>

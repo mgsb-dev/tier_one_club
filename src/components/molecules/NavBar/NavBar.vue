@@ -35,12 +35,12 @@
           </ul>
         </li>
         <li
-          id="programs"
+          id="calendar"
           class="NavBar__list-title"
           @click.prevent="clickHandler"
           @mouseenter.prevent="hideTabs"
         >
-          <RouterLink to="/programs" class="NavBar__list-title--dark">Calendario</RouterLink>
+          <RouterLink to="/calendar" class="NavBar__list-title--dark">Calendario</RouterLink>
         </li>
         <li
           id="gallery"
@@ -56,7 +56,7 @@
           @click.prevent="clickHandler"
           @mouseenter.prevent="hideTabs"
         >
-          <RouterLink to="#" class="NavBar__list-title--dark">Tienda</RouterLink>
+          <RouterLink to="/shop" class="NavBar__list-title--dark">Tienda</RouterLink>
         </li>
         <li
           id="aboutUs"
