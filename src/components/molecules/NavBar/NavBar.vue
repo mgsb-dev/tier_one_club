@@ -27,7 +27,7 @@
           @mouseenter.prevent="showTraining"
           @click.prevent="clickHandler"
         >
-          <RouterLink to="/training" class="NavBar__list-title--dark">FORMACIÓN</RouterLink>
+          <RouterLink to="/training" class="NavBar__list-title--dark">Formación</RouterLink>
           <ul class="NavBar__list" v-if="isTrainingsShow" @mouseleave.prevent="hideTraining">
             <li class="NavBar__list-item" v-for="training in trainings" :key="training.id">
               <RouterLink :to="training.id">{{ training.name }}</RouterLink>
@@ -35,17 +35,12 @@
           </ul>
         </li>
         <li
-          id="programs"
+          id="calendar"
           class="NavBar__list-title"
-          @mouseenter.prevent="showPrograms"
           @click.prevent="clickHandler"
+          @mouseenter.prevent="hideTabs"
         >
-          <RouterLink to="/programs" class="NavBar__list-title--dark">Programación</RouterLink>
-          <ul class="NavBar__list" v-if="isProgramsShow" @mouseleave.prevent="hidePrograms">
-            <li class="NavBar__list-item" v-for="program in programs" :key="program.id">
-              <RouterLink :to="program.id">{{ program.name }}</RouterLink>
-            </li>
-          </ul>
+          <RouterLink to="/calendar" class="NavBar__list-title--dark">Calendario</RouterLink>
         </li>
         <li
           id="gallery"
@@ -53,7 +48,7 @@
           @click.prevent="clickHandler"
           @mouseenter.prevent="hideTabs"
         >
-          <RouterLink to="/gallery" class="NavBar__list-title--dark">Galería</RouterLink>
+          <RouterLink to="/gallery" class="NavBar__list-title--dark">Media</RouterLink>
         </li>
         <li
           id="shop"
@@ -61,7 +56,7 @@
           @click.prevent="clickHandler"
           @mouseenter.prevent="hideTabs"
         >
-          <RouterLink to="#" class="NavBar__list-title--dark">Tienda</RouterLink>
+          <RouterLink to="/shop" class="NavBar__list-title--dark">Tienda</RouterLink>
         </li>
         <li
           id="aboutUs"
@@ -69,7 +64,7 @@
           @click.prevent="clickHandler"
           @mouseenter.prevent="hideTabs"
         >
-          <RouterLink to="/about-us" class="NavBar__list-title--dark">Conócenos</RouterLink>
+          <RouterLink to="/about-us" class="NavBar__list-title--dark">Contacto</RouterLink>
         </li>
       </ul>
     </nav>
@@ -86,12 +81,8 @@ export default defineComponent({
   components: { RouterLink, InstagramIcon, FacebookIcon },
   setup() {
     const trainings = [
-      { name: 'Opción 1', id: '/training' },
-      { name: 'Opción 2', id: '/training' }
-    ]
-    const programs = [
-      { name: 'Calendario', id: '/programs' },
-      { name: 'Opción 2', id: '/programs' }
+      { name: 'Nacional', id: '/training' },
+      { name: 'Internacional', id: '/training' }
     ]
 
     const isTrainingsShow = ref(false)
@@ -105,15 +96,6 @@ export default defineComponent({
 
     const hideTraining = (): void => {
       isTrainingsShow.value = false
-    }
-
-    const showPrograms = (): void => {
-      isTrainingsShow.value = false
-      isProgramsShow.value = true
-    }
-
-    const hidePrograms = (): void => {
-      isProgramsShow.value = false
     }
 
     const hideTabs = (): void => {
@@ -143,14 +125,11 @@ export default defineComponent({
     return {
       TierOneClubIcon,
       trainings,
-      programs,
       isTrainingsShow,
       isProgramsShow,
 
       showTraining,
       hideTraining,
-      showPrograms,
-      hidePrograms,
       clickHandler,
       hideTabs
     }

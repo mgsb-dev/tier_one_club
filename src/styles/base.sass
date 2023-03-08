@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Orbitron:wght@900&family=Sintony&display=swap')
 
 @import '@/styles/colors'
+@import '@/styles/breakpoints'
 
 $font__default: 'Sintony', sans-serif
 $font__title: 'Bai Jamjuree', sans-serif
@@ -26,7 +27,8 @@ li
 
 h1
   color: $color__sand
-  font-size: 14rem
+  font-size: 10rem
   font-family: $font__h1
   cursor: url('target_white.png'), pointer
-
+  @media only screen and (min-width: $xl)
+    font-size: 14rem

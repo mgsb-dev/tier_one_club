@@ -1,5 +1,6 @@
 @import '@/styles/colors'
 @import '@/styles/base'
+@import '@/styles/breakpoints'
 
 .NavBar
   z-index: 2
@@ -9,7 +10,9 @@
   flex-direction: row
   justify-content: space-between
   align-items: center
-  padding: 2rem 
+  padding: 1.5rem 1rem
+  @media only screen and (min-width: $xl)
+    padding: 2rem 
   &__rrss-container
     display: flex
     flex-direction: row
@@ -20,29 +23,35 @@
     align-items: center
     margin-right: 0.5rem
   &__rrss-title
+    font-size: 1rem
     color: $color__white
     margin-right: 1rem
     font-family: $font__title
-    font-size: 1.2rem
     font-weight: bold
+    @media only screen and (min-width: $xl)
+      font-size: 1.2rem
   &__content
-    width: 900px
+    width: 700px
     height: 32px
     display: flex
     flex-direction: row
     justify-content: space-evenly
+    @media only screen and (min-width: $xl)
+      width: 900px
   &__list
     z-index: 2
     position: absolute
     top: 35px
     padding: 6px 10px
-    background-color: $color__gray-dark
+    background-color: $color__gray--dark
     border-top: 2px solid transparent
   &__list-title
-    font-size: 1.2rem
+    font-size: 1rem
     text-align: right
     letter-spacing: 1px
     border-bottom: 2px solid transparent
+    @media only screen and (min-width: $xl)
+      font-size: 1.2rem
     a
       font-weight: bold
       padding-left: 2px
@@ -50,11 +59,14 @@
       text-transform: uppercase
     &:hover, &.active
       border-bottom: 2px solid $color__sand
+
   &__list-title--dark
     cursor: url('target_white.png'), pointer
   &__list-item
+    font-size: 0.8rem
     text-align: left
-    font-size: 18px
+    @media only screen and (min-width: $xl)
+      font-size: 18px
     &:hover
       a
         color: $color__sand

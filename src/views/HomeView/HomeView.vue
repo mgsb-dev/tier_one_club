@@ -1,13 +1,13 @@
 <template>
-  <main class="HomeView__wrapper">
-    <div class="HomeView__first-container">
-      <div class="HomeView__title-container">
-        <h1 class="HomeView__title-one">TIER</h1>
+  <main class="Home__wrapper">
+    <div class="Home__first-container">
+      <div class="Home__title-container">
+        <h1 class="Home__title-one">TIER</h1>
       </div>
     </div>
 
-    <div class="HomeView__second-container">
-      <h1 class="HomeView__title">ONE</h1>
+    <div class="Home__second-container">
+      <h1 class="Home__title">ONE</h1>
     </div>
   </main>
 </template>
