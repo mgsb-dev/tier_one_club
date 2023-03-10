@@ -1,8 +1,11 @@
 <template>
   <main class="Home__wrapper">
-    <div class="Home__first-container animate__animated animate__slideInLeft">
+    <div
+      id="homeFirstContainer"
+      class="Home__first-container animate__animated animate__fadeInLeftBig"
+    >
       <div class="Home__title-container">
-        <h1 class="Home__title-one animate__animated animate__slideInLeft animate__slow">TIER</h1>
+        <h1 class="Home__title-one animate__animated animate__fadeInLeftBig animate__slow">TIER</h1>
       </div>
     </div>
 
@@ -13,7 +16,11 @@
 </template>
 
 <script lang="ts">
-import 'animate.css'
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  setup() {}
+})
 </script>
 
 <style lang="sass">

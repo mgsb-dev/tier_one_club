@@ -4,6 +4,8 @@ import router from './router'
 
 import './assets/base.css'
 import '@/styles/index.sass'
+import 'animate.css'
+
 
 const app = createApp(App)
 

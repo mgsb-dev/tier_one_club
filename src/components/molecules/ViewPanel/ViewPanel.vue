@@ -1,18 +1,17 @@
 <template>
   <div class="ViewPanel">
     <div class="ViewPanel__spacer"></div>
-    <div class="ViewPanel__container animate__animated animate__fadeInUpBig">
+    <div class="ViewPanel__container animate__animated animate__fadeInLeftBig">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onBeforeUnmount, ref } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup() {
-  }
+  setup() {}
 })
 </script>
 <style lang="sass">
