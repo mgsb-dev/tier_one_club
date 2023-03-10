@@ -20,4 +20,5 @@ import NavBar from './components/molecules/NavBar/NavBar.vue'
   -o-background-size: cover
   background-size: cover
   z-index: -1
+  background-position: bottom
 </style>
