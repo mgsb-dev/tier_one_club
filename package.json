@@ -14,9 +14,11 @@
   "dependencies": {
     "@types/vue-feather-icons": "^5.0.4",
     "@zhuowenli/vue-feather-icons": "^5.0.2",
+    "add-to-calendar-button": "^2.2.3",
     "animate.css": "^4.1.1",
     "normalize.css": "^8.0.1",
     "sass": "^1.58.3",
+    "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },

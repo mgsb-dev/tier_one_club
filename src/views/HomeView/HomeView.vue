@@ -2,15 +2,15 @@
   <main class="Home__wrapper">
     <div
       id="homeFirstContainer"
-      class="Home__first-container animate__animated animate__fadeInLeftBig"
+      class="Home__first-container animate__animated animate__slideInLeft animate__slow"
     >
       <div class="Home__title-container">
-        <h1 class="Home__title-one animate__animated animate__fadeInLeftBig animate__slow">TIER</h1>
+        <h1 class="Home__title-one animate__animated animate__slideInLeft animate__slower">TIER</h1>
       </div>
     </div>
 
     <div class="Home__second-container">
-      <h1 class="Home__title animate__animated animate__slideInRight animate__slow">ONE</h1>
+      <h1 class="Home__title animate__animated animate__slideInRight animate__slower">ONE</h1>
     </div>
   </main>
 </template>
@@ -19,7 +19,12 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup() {}
+  setup() {
+    const leave = () => {
+      console.log('leave')
+    }
+    return { leave }
+  }
 })
 </script>
 

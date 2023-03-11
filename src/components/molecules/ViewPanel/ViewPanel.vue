@@ -1,7 +1,7 @@
 <template>
   <div class="ViewPanel">
     <div class="ViewPanel__spacer"></div>
-    <div class="ViewPanel__container animate__animated animate__fadeInLeftBig">
+    <div class="ViewPanel__container">
       <slot></slot>
     </div>
   </div>
