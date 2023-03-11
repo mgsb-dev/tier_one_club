@@ -1,12 +1,41 @@
 <template>
   <div class="Calendar">
     <h2 class="Calendar__title">Calendar</h2>
-    <Calendar :attributes="attributes" is-dark is-expanded :columns="2" :step="1" />
+    <Calendar
+      :attributes="attributes"
+      is-dark
+      is-expanded
+      :columns="2"
+      :step="1"
+      @dayclick="clicked"
+    >
+      <template #day-popover>
+        <div v-if="showDate" class="Calendar__popover-container">
+          <popover-row>
+            Add this event to your calendar
+            <add-to-calendar-button
+              name="Calendar"
+              :startDate="showDate"
+              startTime="10:15"
+              endTime="23:30"
+              timeZone="America/Los_Angeles"
+              location="World Wide Web"
+              hideBackground
+              hideCheckmark
+              description="Add to calendar"
+              options="'Apple','Google','iCal','Outlook.com','Microsoft 365','Microsoft Teams','Yahoo'"
+              lightMode="bodyScheme"
+            >
+            </add-to-calendar-button>
+          </popover-row>
+        </div>
+      </template>
+    </Calendar>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { Calendar } from 'v-calendar'
 
 export default defineComponent({
@@ -14,37 +43,45 @@ export default defineComponent({
   setup() {
     const importantDate = 'Important date'
     const availableDate = 'Available date'
+    const showDate = ref()
 
     const dateInformation = [
       {
-        key: 'today',
+        key: 'data',
         highlight: 'gray',
-        date: new Date(),
+        dates: new Date(),
         description: 'Today'
       },
       {
         description: importantDate,
-        date: 'March 17, 2023',
+        dates: 'March 22, 2023',
         dot: 'red'
       },
       {
         description: availableDate,
-        date: 'March 27, 2023',
+        dates: 'March 27, 2023',
         dot: 'green'
       }
     ]
 
     const attributes = dateInformation.map((el) => ({
-      key: el.date,
-      dates: new Date(el.date),
+      key: el.dates,
+      dates: new Date(el.dates),
       dot: el.dot,
       highlight: el.highlight,
       popover: {
-        label: el.description
+        label: el.description,
+        isInteractive: true,
+        visibility: 'focus'
       }
     }))
 
-    return { attributes }
+    const clicked = (date: { id: Date }) => {
+      showDate.value = date.id
+      console.log('e', date.id)
+    }
+
+    return { attributes, showDate, clicked }
   }
 })
 </script>

@@ -7,6 +7,7 @@ import './assets/base.css'
 import '@/styles/index.sass'
 import 'animate.css'
 import 'v-calendar/dist/style.css'
+import 'add-to-calendar-button'
 
 const app = createApp(App)
 
